@@ -24,6 +24,7 @@ float[] sy=new float[8];
 float sSpeed;
 int closestEnemy;
 int k=0;
+int min;
 //state
 int GameState;
 int EnemyState;
@@ -479,7 +480,7 @@ void scoreChange(int value)
 int closestEnemy(float x,float y)
 { 
   float[] distance=new float [8];
-  int min=0;
+  min=0;
   /*if((enemyX[0]>width&&enemyX[0]<0)&&(enemyX[1]>width&&enemyX[1]<0)&&(enemyX[2]>width&&enemyX[2]<0)&&(enemyX[3]>width&&enemyX[3]<0)&&
   (enemyX[4]>width&&enemyX[4]<0)&&(enemyX[5]>width&&enemyX[5]<0)&&(enemyX[6]>width&&enemyX[6]<0)&&(enemyX[7]>width&&enemyX[7]<0))
     return -1;*/
