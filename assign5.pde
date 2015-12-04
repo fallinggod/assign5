@@ -23,7 +23,6 @@ float[] sx=new float[8];
 float[] sy=new float[8];
 float sSpeed;
 int closestEnemy;
-int k=0;
 //state
 int GameState;
 int EnemyState;
@@ -42,7 +41,6 @@ boolean []flamesAppear=new boolean[8];
 boolean treasureHit=false;
 boolean enemyHit=false;
 boolean bulletHit=false;
-boolean overBullet=false;
 void setup () {
     size(640,480);
     //image
@@ -174,20 +172,9 @@ void draw()
       for(int i=0;i<5;i++)
       {
         image(shoot,sx[i],sy[i]);
-        for(int j=0;j<8;j++)
-        {
-          if(sx[i]<enemyX[j])
-            k++;
-        }
-        if(k==8)
-        {
-          k=0;
-          overBullet=true;
-        }
         closestEnemy=closestEnemy(sx[i],sy[i]);
-        if(closestEnemy!=-1&&overBullet==false)
+        if(closestEnemy!=-1)
         {
-
             if(enemyY[i]>sy[i])
               sy[i]+=1;
             if(enemyY[i]<sy[i])
@@ -477,7 +464,6 @@ void enemyMoveOut(int[] enemy)
     {
       enemy[i]=-1;
       enemyY[i]=-1;
-      overBullet=false;
     }
   }
 }
