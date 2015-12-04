@@ -118,7 +118,7 @@ void draw()
       break;
     }
     //------------------------------------------------------
-    /*
+    
     case GAME_RUN:
     {
       //bg
@@ -174,7 +174,7 @@ void draw()
       //shoot
       for(int i=0;i<5;i++)
       {
-        image(shoot,sx[i],sy[i]);
+        /*image(shoot,sx[i],sy[i]);
         for(int j=0;j<8;j++)
         {
           if(sx[i]<enemyX[j])
@@ -196,7 +196,7 @@ void draw()
         }else
         {
           sy[i]+=0;
-        }
+        }*/
         sx[i]-=sSpeed;
         if(sx[i] < -31)
            sx[i] =sy[i]=-960;
@@ -319,7 +319,7 @@ void draw()
       break;
     }
     
-    */
+    
     
   }
 }
@@ -395,7 +395,7 @@ void addDiamondEnemy()
   }
 }
 
-/*void keyPressed()
+void keyPressed()
 {
   if(key==CODED)
   {
@@ -487,7 +487,7 @@ void scoreChange(int value)
 {
   count+=value;
 }
-int closestEnemy(float x,float y)
+/*int closestEnemy(float x,float y)
 { 
   float[] distance=new float [8];
   int min=0;
