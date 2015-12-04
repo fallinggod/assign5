@@ -395,7 +395,7 @@ void addDiamondEnemy()
   }
 }
 
-void keyPressed()
+/*void keyPressed()
 {
   if(key==CODED)
   {
@@ -505,3 +505,4 @@ int closestEnemy(float x,float y)
   }
   return min;
 }
+*/
