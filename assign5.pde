@@ -166,7 +166,7 @@ void draw()
       image(hp,30,20);
       //score
       textSize(30);
-      fill(255);
+      fill(0);
       text("score:"+count,10,440);
       //shoot
       for(int i=0;i<5;i++)
