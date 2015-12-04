@@ -174,29 +174,18 @@ void draw()
       //shoot
       for(int i=0;i<5;i++)
       {
-        /*image(shoot,sx[i],sy[i]);
-        for(int j=0;j<8;j++)
-        {
-          if(sx[i]<enemyX[j])
-            k++;
-        }
-        if(k==8)
-        {
-          k=0;
-          overBullet=true;
-        }
+        image(shoot,sx[i],sy[i]);
         closestEnemy=closestEnemy(sx[i],sy[i]);
-        if(closestEnemy!=-1&&overBullet==false)
-        {
-
-            if(enemyY[i]>sy[i])
+        //if(closestEnemy!=-1)
+        //{
+            if(enemyY[closestEnemy]>sy[i])
               sy[i]+=1;
-            if(enemyY[i]<sy[i])
+            if(enemyY[closestEnemy]<sy[i])
               sy[i]-=1;
-        }else
-        {
-          sy[i]+=0;
-        }*/
+        //}else
+        //{
+        //  sy[i]+=0;
+        //}
         sx[i]-=sSpeed;
         if(sx[i] < -31)
            sx[i] =sy[i]=-960;
@@ -487,13 +476,13 @@ void scoreChange(int value)
 {
   count+=value;
 }
-/*int closestEnemy(float x,float y)
+int closestEnemy(float x,float y)
 { 
   float[] distance=new float [8];
   int min=0;
-  if((enemyX[0]>width&&enemyX[0]<0)&&(enemyX[1]>width&&enemyX[1]<0)&&(enemyX[2]>width&&enemyX[2]<0)&&(enemyX[3]>width&&enemyX[3]<0)&&
+  /*if((enemyX[0]>width&&enemyX[0]<0)&&(enemyX[1]>width&&enemyX[1]<0)&&(enemyX[2]>width&&enemyX[2]<0)&&(enemyX[3]>width&&enemyX[3]<0)&&
   (enemyX[4]>width&&enemyX[4]<0)&&(enemyX[5]>width&&enemyX[5]<0)&&(enemyX[6]>width&&enemyX[6]<0)&&(enemyX[7]>width&&enemyX[7]<0))
-    return -1;
+    return -1;*/
   for(int i=0;i<8;i++)
   {
     distance[i]=dist(x,y,enemyX[i],enemyY[i]);
@@ -505,4 +494,3 @@ void scoreChange(int value)
   }
   return min;
 }
-*/
