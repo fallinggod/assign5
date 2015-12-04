@@ -176,16 +176,16 @@ void draw()
       for(int i=0;i<5;i++)
       {        
         closestEnemy1=closestEnemy(sx[i],sy[i]);
-        //if(closestEnemy!=-1)
-        //{
+        if(closestEnemy!=-1)
+        {
             if(enemyY[closestEnemy1]>sy[i])
               sy[i]+=1;
             if(enemyY[closestEnemy1]<sy[i])
               sy[i]-=1;
-        //}else
-        //{
-        //  sy[i]+=0;
-        //}
+        }else
+        {
+          sy[i]+=0;
+        }
         sx[i]-=sSpeed;
         if(sx[i] < -31)
            sx[i] =sy[i]=-960;
@@ -481,9 +481,9 @@ int closestEnemy(float x,float y)
 { 
   float[] distance=new float [8];
   min=0;
-  /*if((enemyX[0]>width&&enemyX[0]<0)&&(enemyX[1]>width&&enemyX[1]<0)&&(enemyX[2]>width&&enemyX[2]<0)&&(enemyX[3]>width&&enemyX[3]<0)&&
+  if((enemyX[0]>width&&enemyX[0]<0)&&(enemyX[1]>width&&enemyX[1]<0)&&(enemyX[2]>width&&enemyX[2]<0)&&(enemyX[3]>width&&enemyX[3]<0)&&
   (enemyX[4]>width&&enemyX[4]<0)&&(enemyX[5]>width&&enemyX[5]<0)&&(enemyX[6]>width&&enemyX[6]<0)&&(enemyX[7]>width&&enemyX[7]<0))
-    return -1;*/
+    return -1;
   for(int i=0;i<8;i++)
   {
     distance[i]=dist(x,y,enemyX[i],enemyY[i]);
