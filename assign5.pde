@@ -22,7 +22,7 @@ float[] fy=new float[8];
 float[] sx=new float[8];
 float[] sy=new float[8];
 float sSpeed;
-int closestEnemy;
+int closestEnemy1=0;
 int k=0;
 int min;
 //state
@@ -174,14 +174,13 @@ void draw()
       text("score:"+count,10,440);
       //shoot
       for(int i=0;i<5;i++)
-      {
-        image(shoot,sx[i],sy[i]);
-        closestEnemy=closestEnemy(sx[i],sy[i]);
+      {        
+        closestEnemy1=closestEnemy(sx[i],sy[i]);
         //if(closestEnemy!=-1)
         //{
-            if(enemyY[closestEnemy]>sy[i])
+            if(enemyY[closestEnemy1]>sy[i])
               sy[i]+=1;
-            if(enemyY[closestEnemy]<sy[i])
+            if(enemyY[closestEnemy1]<sy[i])
               sy[i]-=1;
         //}else
         //{
@@ -190,6 +189,7 @@ void draw()
         sx[i]-=sSpeed;
         if(sx[i] < -31)
            sx[i] =sy[i]=-960;
+        image(shoot,sx[i],sy[i]);
       }
       //enemyhit
       for(int i=0;i<8;i++)
